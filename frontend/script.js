@@ -1,4 +1,4 @@
-const BACKEND_URL = "https://your-backend-url.onrender.com/translate"; // Replace with deployed backend URL
+const BACKEND_URL = "https://eng-to-jpn.onrender.com"; // Replace with deployed backend URL
 
 async function translate() {
   const input = document.getElementById("inputText").value;
