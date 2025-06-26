@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>English to Japanese Translator</title>
+</head>
+<body>
+    <h2>Translate English to Japanese</h2>
+    <textarea id="input" rows="5" cols="60" placeholder="Enter English text here..."></textarea><br><br>
+    <button onclick="translate()">Translate</button>
+    <p><strong>Japanese:</strong></p>
+    <div id="output" style="white-space: pre-line; font-size: 1.2em;"></div>
+
+    <script>
+        async function translate() {
+            const text = document.getElementById("input").value;
+            const res = await fetch("https://your-backend-url/translate", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({ text })
+            });
+            const data = await res.json();
+            document.getElementById("output").innerText = data.translation;
+        }
+    </script>
+</body>
+</html>
