@@ -1,7 +1,7 @@
-const BACKEND_URL = "https://eng-to-jpn.onrender.com"; // Replace with deployed backend URL
+const BACKEND_URL = "https://eng-to-jpn.onrender.com/translate";
 
 async function translate() {
-  const input = document.getElementById("inputText").value;
+  const input = document.getElementById("input").value;
   const output = document.getElementById("output");
 
   output.textContent = "Translating...";
@@ -14,7 +14,7 @@ async function translate() {
     });
 
     const data = await res.json();
-    output.textContent = data.translated || "No translation returned.";
+    output.textContent = data.translation || "No translation returned.";
   } catch (err) {
     output.textContent = "Error: " + err.message;
   }
